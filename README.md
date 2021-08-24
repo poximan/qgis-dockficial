@@ -3,7 +3,7 @@ despliegue automatico via docker-compose de un sistema qgis (server + proxy inve
 sigue [documentacion oficial](https://docs.qgis.org/3.16/en/docs/server_manual/containerized_deployment.html)
 
 ## proyecto qgs (Quantum GiS)
-deberá copiarse dentro de ./servidor/data/ con nombre `osm.qgs`
+deberá copiarse dentro de ./servidor/data/ con nombre de proyecto `osm.qgs`
 
 ## despliegue
 para desplegar ejecutar
@@ -23,6 +23,12 @@ en caso que el despliegue haya sido satisfactorio, y exista un proyecto QGIS car
 | --------- | ----------- |
 | bbox | Bounding box for map extent. Value is minx, miny, maxx, maxy in units of the CRS |
 | crs | Coordinate reference systems (CRS). QGIS supports different CRS identifiers (has EPSG:\<code\>) |
+
+## requerimientos del sistema
+- docker, version 20.10.5.
+  * windows docker desktop. pasá por [aca](https://www.docker.com/products/docker-desktop)
+  * linux docker, pasá por [aca](https://hub.docker.com/search?offering=community&operating_system=linux&q=&type=edition)
+- git, version 2.32.0. pasá por [aca](https://git-scm.com/downloads)
 
 ## diccionario
 - ¿Qué es un SRID?
