@@ -1,0 +1,8 @@
+FROM nginx:1.13
+
+# -----------------------------------------------
+# descargar herramientas
+RUN apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests --allow-unauthenticated -y \        
+        inetutils-ping \
+        net-tools

@@ -1,0 +1,34 @@
+version: '3.7'
+services:
+
+  qgis-server:
+    build: ./servidor/
+    image: img_qgis_server
+    volumes:
+      - ./servidor/data:/data:ro
+    environment:
+    - QGIS_PROJECT_FILE=/data/osm.qgs
+    - QGIS_SERVER_LOG_LEVEL=0  # INFO (log all requests)
+    - DEBUG=1                  # display env before spawning QGIS Server
+    ports: # huesped:anfitrion
+      - "5555:5555"
+    networks:
+      - qgis
+    container_name: cont_qgis_server
+    
+  # proxy inverso
+  nginx-inv:
+    build: ./proxynv/
+    image: img_nginx_inv
+    volumes:
+      - ./proxynv/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: # huesped:anfitrion
+      - "8080:80"
+    networks:
+      - qgis
+    container_name: cont_nginx_inv
+    depends_on:
+      - qgis-server
+
+networks:
+  qgis:
