@@ -22,7 +22,7 @@ en caso que el despliegue haya sido satisfactorio, y exista un proyecto QGIS car
 | argumento | descripcion |
 | --------- | ----------- |
 | bbox | Bounding box for map extent. Value is minx, miny, maxx, maxy in units of the CRS |
-| crs | Coordinate reference systems (CRS). QGIS supports different CRS identifiers (has EPSG:<code>) |
+| crs | Coordinate reference systems (CRS). QGIS supports different CRS identifiers (has EPSG:\<code\>) |
 
 ## diccionario
 - ¿Qué es un SRID?
